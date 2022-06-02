@@ -318,6 +318,8 @@ void *memset(void *s, int c, size_t n)
 	return s;
 }
 
+#ifdef ATOMIC_16_TESTS
+
 #define BF_ATOMIC_GEN		0
 #define BF_ATOMIC_GEN_N		1
 #define BF_ATOMIC_IMPL		2
@@ -435,4 +437,6 @@ inline _Bool __atomic_compare_exchange_16(volatile void *ptr, void *expected, __
 
 	return ret;
 }
+#endif
+
 #endif
